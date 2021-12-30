@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "types:lint": "nx lint types"
+    "types:lint": "nx lint types",
+    "server:lint": "nx lint server",
+    "server:start": "nx serve server"
   },
   "private": true,
   "devDependencies": {
