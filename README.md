@@ -32,3 +32,27 @@ To resolve this issue:
 [lil-course-url]: https://www.linkedin.com/learning/
 [lil-thumbnail-url]: http://
 
+## Working with a Monorepo
+
+The Chat product we're building is made up of 3 distinct packages:
+1. [The Shared Library](./packages/types)
+2. [The Websocket Server](./packages/server)
+3. [The Angular Web Application](./packages/webapp)
+
+The Monorepo is managed using the [Nx build system](https://nx.dev/) to greatly simplify setup.  Here are the commands used to scaffold each package:
+
+### The Shared Library
+```bash
+npx nx generate @nrwl/workspace:library types
+```
+
+### The Websocket Server
+```bash
+npx nx generate @nrwl/node:app server
+```
+
+### The Angular Web Application
+```bash
+npx nx generate @nrwl/angular:app webapp
+```
+
