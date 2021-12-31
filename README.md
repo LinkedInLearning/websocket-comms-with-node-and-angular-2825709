@@ -53,6 +53,6 @@ npx nx generate @nrwl/node:app server
 
 ### The Angular Web Application
 ```bash
-npx nx generate @nrwl/angular:app webapp
+npx nx generate @nrwl/angular:app webapp --backendProject server --strict false --style scss --routing false
 ```
 
