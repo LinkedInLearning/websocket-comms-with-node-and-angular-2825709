@@ -1,1 +1,8 @@
-<websocket-nx-welcome></websocket-nx-welcome>
+<h3>
+  {{user | json}}
+</h3>
+
+<pre *ngFor="let message of messages">
+  {{message | json}}
+  <hr>
+</pre>

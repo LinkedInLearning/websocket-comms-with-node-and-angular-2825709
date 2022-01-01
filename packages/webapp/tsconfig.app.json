@@ -5,6 +5,9 @@
     "types": [],
     "target": "ES2017"
   },
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  },
   "files": ["src/main.ts", "src/polyfills.ts"],
   "include": ["src/**/*.d.ts"],
   "exclude": ["**/*.test.ts", "**/*.spec.ts"]
