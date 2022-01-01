@@ -1,7 +1,13 @@
-import { User } from '@websocket/types';
+import { ServerOptions } from 'ws';
+import { environment } from './environments/environment';
+import { WsHandler } from './app/ws-handler';
 
-const u: User = {
-  id: 2,
-  name: 'Johnny',
+async function run() {
+  const wsOptions: ServerOptions = {
+    port: environment.wsPort
+  }
+
+  const wsHandler = new WsHandler(wsOptions);
 }
-console.log('Hello World!', u);
+
+run().catch(err => console.error(err))
