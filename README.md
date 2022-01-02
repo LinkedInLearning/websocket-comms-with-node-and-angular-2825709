@@ -41,18 +41,28 @@ The Chat product we're building is made up of 3 distinct packages:
 
 The Monorepo is managed using the [Nx build system](https://nx.dev/) to greatly simplify setup.  Here are the commands used to scaffold each package:
 
-### The Shared Library
+### Creating the Shared Library
 ```bash
 npx nx generate @nrwl/workspace:library types
 ```
 
-### The Websocket Server
+### Creating the Websocket Server
 ```bash
 npx nx generate @nrwl/node:app server
 ```
 
-### The Angular Web Application
+### Creating the Angular Web Application
 ```bash
 npx nx generate @nrwl/angular:app webapp --backendProject server --strict false --style scss --routing false
 ```
 
+### Adding Angular Material
+```bash
+npm install --save @angular/material
+npx nx generate @angular/material:ng-add --project=webapp --typography false --theme indigo-pink --animations true
+```
+
+After install, add the Angular material theming CSS file of your choice to the styles array of [project.json](./packages/webapp/project.json).  For example:
+> "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+
+Options are `indigo-pink.css`, `deeppurple-amber.css`, `pink-bluegrey.css` and `purple-green.css`
