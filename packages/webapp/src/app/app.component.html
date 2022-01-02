@@ -2,7 +2,10 @@
   {{user | json}}
 </h3>
 
-<pre *ngFor="let message of messages">
-  {{message | json}}
-  <hr>
-</pre>
+<mat-card class="chat-card" *ngFor="let message of messages">
+  <mat-card-title>{{message.payload.author.name}}</mat-card-title>
+  <mat-card-subtitle>id #{{message.payload.author.id}}</mat-card-subtitle>
+  <mat-card-content>
+    <p>{{message.payload.contents}}</p>
+  </mat-card-content>
+</mat-card>

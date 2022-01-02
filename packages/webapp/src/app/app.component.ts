@@ -11,9 +11,6 @@ export class AppComponent implements OnInit {
   user: User;
   messages: ServerChatMessage[] = [];
 
-  constructor() {
-  }
-
   ngOnInit(): void {
     this.user = { name: 'John', id: 1}
     this.messages = [
