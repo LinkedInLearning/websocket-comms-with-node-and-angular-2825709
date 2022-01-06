@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "server": "packages/server",
     "types": "packages/types"
   }
 }
