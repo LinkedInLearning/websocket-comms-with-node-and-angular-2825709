@@ -1,1 +1,7 @@
-<div class="blue">{{title}}</div>
+<div class="login-state">
+  {{ currentUser | json }}
+</div>
+
+<div *ngFor="let message of messages" class="chat-area">
+  <pre>{{ messages | json }}</pre>
+</div>
