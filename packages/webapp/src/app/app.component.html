@@ -2,6 +2,15 @@
   {{ currentUser | json }}
 </div>
 
-<div *ngFor="let message of messages" class="chat-area">
-  <pre>{{ messages | json }}</pre>
+<div class="chat-area">
+  <mat-card *ngFor="let message of messages">
+    <p> {{message.author.name}} </p>
+    <pre> {{message.contents}} </pre>
+  </mat-card>
+</div>
+
+<div class="chat-input">
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="What's on your mind?">
+  </mat-form-field>
 </div>

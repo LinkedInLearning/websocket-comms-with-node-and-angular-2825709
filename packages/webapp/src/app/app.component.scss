@@ -23,8 +23,18 @@
 
 .chat-area {
   grid-area: chat-area;
+
+  mat-card {
+    max-width: 400px;
+    margin-bottom: 15px;
+  }
 }
 
 .chat-input {
   grid-area: chat-input;
+
+  mat-form-field {
+    display: block;
+    max-width: 432px;
+  }
 }
