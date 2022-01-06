@@ -27,7 +27,7 @@ export class WsHandler {
     const payload: WsMessage = JSON.parse(`${data}`)
     console.log(`Received: `, payload)
 
-    this.userManager.send(socket, { event: 'chat', contents: 'hey, still here' })
+    this.userManager.sendToAll(payload)
   }
 
   onSocketClosed(socket: WebSocket, code: number, reason: Buffer) {
