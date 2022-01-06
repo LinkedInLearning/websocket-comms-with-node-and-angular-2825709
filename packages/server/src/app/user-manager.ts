@@ -1,4 +1,5 @@
 import { WebSocket } from 'ws';
+import { WsMessage } from '@websocket/types';
 
 export class UserManager {
   private sockets = new Set<WebSocket>()
@@ -11,12 +12,12 @@ export class UserManager {
     this.sockets.delete(socket)
   }
 
-  send(socket: WebSocket, message: unknown) {
+  send(socket: WebSocket, message: WsMessage) {
     const data = JSON.stringify(message)
     socket.send(data)
   }
 
-  sendToAll(message: unknown) {
+  sendToAll(message: WsMessage) {
     const data = JSON.stringify(message)
 
     this.sockets.forEach(socket => {
