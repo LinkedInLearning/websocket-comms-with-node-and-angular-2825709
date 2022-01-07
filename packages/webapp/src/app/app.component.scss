@@ -25,6 +25,11 @@
 
 .user-list {
   grid-area: user-list;
+  padding: 15px;
+
+  mat-list-item.current-user {
+    background-color: beige;
+  }
 }
 
 .chat-area {

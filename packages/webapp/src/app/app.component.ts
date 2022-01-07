@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'I am Angular';
 
   messages: ChatRelayMessage[] = []
+  users: User[] = []
   currentUser: User
 
   constructor(private appService: AppService, private snackbar: MatSnackBar) {
@@ -21,6 +22,11 @@ export class AppComponent implements OnInit {
     this.appService.chatMessage$.subscribe(msg => this.messages = [...this.messages, msg])
     this.appService.user$.subscribe(user => this.currentUser = user)
     this.appService.systemNotice$.subscribe(notice => this.onSystemNotice(notice))
+
+    this.users = [
+      { name: 'Abe', id: 10 },
+      { name: 'Courtney', id: 7 },
+    ]
   }
 
   connect(userNameInput: HTMLInputElement) {
