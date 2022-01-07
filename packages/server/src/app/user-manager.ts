@@ -1,5 +1,5 @@
 import { WebSocket } from 'ws';
-import { SystemNotice, User, WsMessage } from '@websocket/types';
+import { LoginMessage, SystemNotice, User, WsMessage } from '@websocket/types';
 import { IncomingMessage } from 'http';
 
 let currId = 1
@@ -21,6 +21,12 @@ export class UserManager {
       contents: `${name} has joined the chat`
     }
     this.sendToAll(systemNotice)
+
+    const loginMessage: LoginMessage = {
+      user,
+      event: 'login'
+    }
+    socket.send(JSON.stringify(loginMessage))
 
     this.sockets.set(socket, user)
   }
