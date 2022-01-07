@@ -21,7 +21,7 @@
 </div>
 
 <div class="chat-area">
-  <mat-card *ngFor="let message of messages">
+  <mat-card *ngFor="let message of messages" [class.current-user]="message.author.id === currentUser?.id">
     <p> {{message.author.name}} </p>
     <pre> {{message.contents}} </pre>
   </mat-card>
