@@ -21,6 +21,6 @@
 
 <div class="chat-input">
   <mat-form-field appearance="outline">
-    <input matInput placeholder="What's on your mind?">
+    <input #chatInput matInput placeholder="What's on your mind?" (keyup.enter)="send(chatInput)">
   </mat-form-field>
 </div>

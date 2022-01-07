@@ -1,5 +1,5 @@
 import { WebSocket } from 'ws';
-import { LoginMessage, SystemNotice, User, WsMessage } from '@websocket/types';
+import { ChatMessage, ChatRelayMessage, LoginMessage, SystemNotice, User, WsMessage } from '@websocket/types';
 import { IncomingMessage } from 'http';
 
 let currId = 1
@@ -48,5 +48,15 @@ export class UserManager {
         socket.send(data)
       }
     })
+  }
+
+  relayChat(from: WebSocket, chatMsg: ChatMessage) {
+    const relayMsg: ChatRelayMessage = {
+      event: 'chatRelay',
+      contents: chatMsg.contents,
+      author: this.sockets.get(from),
+    }
+
+    this.sendToAll(relayMsg)
   }
 }
