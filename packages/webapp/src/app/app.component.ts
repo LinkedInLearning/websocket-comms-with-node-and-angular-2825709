@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatRelayMessage, User } from '@websocket/types';
+import { ChatRelayMessage, SystemNotice, User } from '@websocket/types';
 import { AppService } from './app.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'websocket-root',
@@ -13,12 +14,13 @@ export class AppComponent implements OnInit {
   messages: ChatRelayMessage[] = []
   currentUser: User
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService, private snackbar: MatSnackBar) {
   }
 
   ngOnInit() {
     this.appService.chatMessage$.subscribe(msg => this.messages = [...this.messages, msg])
     this.appService.user$.subscribe(user => this.currentUser = user)
+    this.appService.systemNotice$.subscribe(notice => this.onSystemNotice(notice))
   }
 
   connect(userNameInput: HTMLInputElement) {
@@ -30,5 +32,9 @@ export class AppComponent implements OnInit {
   send(chatInput: HTMLInputElement) {
     this.appService.send(chatInput.value)
     chatInput.value = ''
+  }
+
+  onSystemNotice(notice: SystemNotice) {
+    this.snackbar.open(notice.contents, undefined, { duration: 5000 })
   }
 }

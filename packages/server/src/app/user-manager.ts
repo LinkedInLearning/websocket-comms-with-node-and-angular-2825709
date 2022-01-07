@@ -32,7 +32,14 @@ export class UserManager {
   }
 
   remove(socket: WebSocket) {
+    const name = this.sockets.get(socket).name
     this.sockets.delete(socket)
+
+    const systemNotice: SystemNotice = {
+      event: 'systemNotice',
+      contents: `${name} has left the chat`
+    }
+    this.sendToAll(systemNotice)
   }
 
   send(socket: WebSocket, message: WsMessage) {
