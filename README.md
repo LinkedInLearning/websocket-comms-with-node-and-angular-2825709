@@ -119,3 +119,7 @@ https://chrome.google.com/webstore/detail/advanced-websocket-client/lgimpnfdefcp
 ### The Websocket Weasel (Firefox extension)
 
 https://addons.mozilla.org/en-US/firefox/addon/websocket-weasel/
+
+## External References
+
+- [Typescript introductory course](https://www.linkedin.com/learning/learning-typescript-2/welcome-to-learning-typescript)
