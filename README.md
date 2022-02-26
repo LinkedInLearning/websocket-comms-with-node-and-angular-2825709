@@ -9,7 +9,7 @@ _See the readme file in the main branch for updated instructions and information
 
 The course was coded on the `main` branch of the repository. The branch has tags coinciding with each video. The tags
 are named following the `CHAPTER#_MOVIE#` pattern. For instance, to see the state of the application at the beginning of
-Chapter 1, Movie 3, you would need to branch out from tag `01_03` with `git checkout b {{NEW_BRANCH_NAME}} 01_03`
+Chapter 1, Movie 3, you would need to branch out from tag `01_03` with `git checkout -b {{NEW_BRANCH_NAME}} 01_03`
 
 On Github, you can use the tag pop up menu to switch to a specific tag and navigate the course files at that stage, or
 go directly to `https://github.com/LinkedInLearning/websocket-comms-with-node-and-angular-2825709/tree/{{TAG_NAME}}`.
