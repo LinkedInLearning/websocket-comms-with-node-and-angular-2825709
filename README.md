@@ -3,6 +3,8 @@
 This is the repository for the LinkedIn Learning course `Websocket Communications with Node and Angular`. The full
 course is available from [LinkedIn Learning][lil-course-url].
 
+If you come across a web page that updates in real time, you’re probably seeing WebSocket at work. Unlike the request and response protocol of HTTP, WebSocket allows for real-time, two-way communication, and learning how to use it will help you to develop more useful and engaging software. In this course, Patrick Siewe teaches you just what WebSocket is and what it can do, by guiding you through the creation of an app for live chatting from end to end. First, he guides you through building the backend server in NodeJS, coded with TypeScript. Then, he shows how to build the front end as a very simple Angular application, also coded in TypeScript. As everything around us gets more connected and interactive, being skilled in WebSocket can only make you more marketable and valuable to current or future employers, so join Patrick in this course to get started on mastering WebSocket.
+
 _See the readme file in the main branch for updated instructions and information._
 
 ## Instructions
@@ -123,3 +125,6 @@ https://addons.mozilla.org/en-US/firefox/addon/websocket-weasel/
 ## External References
 
 - [Typescript introductory course](https://www.linkedin.com/learning/learning-typescript-2/welcome-to-learning-typescript)
+
+[lil-course-url]: https://www.linkedin.com/learning/websocket-communications-with-node-and-angular
+[lil-thumbnail-url]: https://cdn.lynda.com/course/2825709/2825709-1646853202613-16x9.jpg
